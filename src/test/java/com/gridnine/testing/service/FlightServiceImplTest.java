@@ -2,6 +2,7 @@ package com.gridnine.testing.service;
 
 import com.gridnine.testing.FlightBuilder;
 import com.gridnine.testing.model.Flight;
+import com.gridnine.testing.service.impl.FlightServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

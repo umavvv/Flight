@@ -1,7 +1,7 @@
 package com.gridnine.testing;
 
 import com.gridnine.testing.service.FlightService;
-import com.gridnine.testing.service.FlightServiceImpl;
+import com.gridnine.testing.service.impl.FlightServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
