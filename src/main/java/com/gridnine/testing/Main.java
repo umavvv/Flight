@@ -1,19 +1,22 @@
 package com.gridnine.testing;
 
 import com.gridnine.testing.service.FlightService;
-import com.gridnine.testing.service.impl.FlightServiceImpl;
+import com.gridnine.testing.service.impl.ArrivalDateBeforeDepartureDateServiceImpl;
+import com.gridnine.testing.service.impl.DepartureBeforeThatTimeServiceImpl;
+import com.gridnine.testing.service.impl.TimeOnEarthServiceImpl;
 
 public class Main {
     public static void main(String[] args) {
         FlightBuilder flightBuilder = new FlightBuilder();
-        FlightService flightService = new FlightServiceImpl();
-
         System.out.println(flightBuilder.createFlights());
 
-        System.out.println(flightService.departureBeforeThatTime(flightBuilder.createFlights()));
+        FlightService service = new DepartureBeforeThatTimeServiceImpl();
+        System.out.println(service.filteredFlights(flightBuilder.createFlights()));
 
-        System.out.println(flightService.arrivalDateBeforeDepartureDate(flightBuilder.createFlights()));
+        FlightService service1 = new ArrivalDateBeforeDepartureDateServiceImpl();
+        System.out.println(service1.filteredFlights(flightBuilder.createFlights()));
 
-        System.out.println(flightService.timeOnEarth(flightBuilder.createFlights()));
-    }
+        FlightService service2 = new TimeOnEarthServiceImpl();
+        System.out.println(service2.filteredFlights(flightBuilder.createFlights()));
+}
 }
